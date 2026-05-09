@@ -57,15 +57,29 @@ export default function Navbar({ onRequestDemo }) {
         </button>
 
         {/* Hamburger */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden flex flex-col gap-1.5 p-2"
-          aria-label="Toggle menu"
-        >
-          <span className={`block w-6 h-0.5 bg-acid-400 transition-all duration-300 origin-center ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-          <span className={`block w-6 h-0.5 bg-acid-400 transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-6 h-0.5 bg-acid-400 transition-all duration-300 origin-center ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
-        </button>
+<button
+  onClick={() => setMenuOpen(!menuOpen)}
+  className="md:hidden flex flex-col justify-center items-center gap-1.5 w-10 h-10 relative z-[999]"
+  aria-label="Toggle menu"
+>
+  <span
+    className={`w-6 h-[2px] bg-[#b8ff3c] rounded-full transition-all duration-300 ${
+      menuOpen ? 'rotate-45 translate-y-[7px]' : ''
+    }`}
+  />
+
+  <span
+    className={`w-6 h-[2px] bg-[#b8ff3c] rounded-full transition-all duration-300 ${
+      menuOpen ? 'opacity-0' : ''
+    }`}
+  />
+
+  <span
+    className={`w-6 h-[2px] bg-[#b8ff3c] rounded-full transition-all duration-300 ${
+      menuOpen ? '-rotate-45 -translate-y-[7px]' : ''
+    }`}
+  />
+</button>
       </div>
 
       {/* Mobile Dropdown Menu */}
